@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-STATICFILES_DIR = [STATIC_DIR, ]
+STATICFILES_DIRS = [STATIC_DIR, ]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
