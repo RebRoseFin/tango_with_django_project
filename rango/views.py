@@ -21,7 +21,7 @@ def index(request):
     visitor_cookie_handler(request)
     context_dict['visits'] = request.session['visits']
     
-    response = render(request, 'rango/index.html', context_dict)
+    response = render(request, 'rango/index.html', context=context_dict)
     return response
 
 def about(request):
@@ -209,7 +209,7 @@ def get_server_side_cookie(request, cookie, default_val=None):
     return val
 
 def visitor_cookie_handler(request):
-    visits = int(request.COOKIES.get('visits', '1'))
+    visits = int(get_server_side_cookie(request, 'visits', '1'))
 
     last_visit_cookie = get_server_side_cookie(request,
                                                'last_visit',
